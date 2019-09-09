@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        var url_string = window.location.href 
+        var url = new URL(url_string);
+        var uploadVal = url.searchParams.get("uploadOk");
+        
+        function alertImageUpload(uploadValue,error){
+            if(uploadValue == 1)
+                alert("Your image has been uploaded!");
+            else{
+                alert("Upload failed. ");
+            }
+        } 
+        
+        window.onload = function() {
+            alertImageUpload(uploadVal, errMsg);
+//            	getRows();
+        };
+        
+    </script>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatißble" content="IE=edge">
+        <title>KolbeSW</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+    <div class="uploadBox">
+                <form action="uploadImage.php" method="post" enctype="multipart/form-data">
+        Select image to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload Image" name="submit">
+</form>
+        </div>
+<!--
+        <?php>
+            echo '<table><tr>';
+            echo '<td>Image</td><td>Type</td><td>Size</td><td>Upload Time</td><td>File Path</td>';
+            echo '</tr>';
+
+            foreach($pic as $row){
+                echo '<tr>';
+                echo '<td>'.$row['Image'].'</td>';
+                echo '<td>'.$row['Type'].'</td>';
+                echo '<td>'.$row['Size'].'</td>';
+                echo '<td>'.$row['Upload Time'].'</td>';
+                echo '<td>'.$row['File Path'].'</td>';
+                echo '</tr>';    
+            }
+echo '</table>';
+        <?>
+-->
+        
+    </body>
+</html>  
